@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'helpers/responsive.dart';
+import 'widgets/large_screen.dart';
+import 'widgets/small_screen.dart';
+
 class Layout extends StatelessWidget {
   const Layout({super.key});
 
@@ -10,20 +14,9 @@ class Layout extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
-      body: Row(
-        children: [
-          Expanded(
-            child: Container(
-              color: Colors.red,
-            ),
-          ),
-          Expanded(
-            flex: 5,
-            child: Container(
-              color: Colors.blue,
-            ),
-          ),
-        ],
+      body: const Responsive(
+        largeScreen: LargeScreen(),
+        smallScreen: SmallScreen(),
       ),
     );
   }
